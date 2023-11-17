@@ -35,6 +35,7 @@ router.get('/containers/start/:id', (req, res, next) => {
                 msg: 'OK',
             });
         } else {
+            console.log(id);
             res.json({
                 code: 400,
                 msg: err.toString(),
