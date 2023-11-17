@@ -1,0 +1,52 @@
+# Dependency directories
+node_modules/
+
+# Optional: OS-generated files
+.DS_Store
+Thumbs.db
+
+# Optional: Logs
+*.log
+npm-debug.log*
+
+# Optional: Environment variables file
+.env
+
+# Optional: Compiled binary addons
+build/Release
+
+# Optional: Coverage directory used by tools like istanbul
+coverage/
+
+# Optional: Output of 'npm pack'
+*.tgz
+
+# Optional: Yarn Integrity file
+.yarn-integrity
+
+# Optional: npm lock file
+package-lock.json
+
+# Optional: Yarn lock file
+yarn.lock
+
+# Optional: Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Optional: Grunt intermediate storage
+.grunt/
+
+# Optional: Typings directory
+typings/
+
+# Optional: eslint cache
+.eslintcache/
+
+# Optional: Output of 'yarn build'
+dist/
+
+# Optional: Output of 'npm run build'
+build/
