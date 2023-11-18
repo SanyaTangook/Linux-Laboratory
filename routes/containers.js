@@ -49,7 +49,7 @@ const returnContainersRouter = (io) => {
     router.post('/create', (req, res, next) => {
         let options = {
             Image: req.body.containerImage,
-            AttachStdin: true,
+            AttachStdin: false,
             AttachStdout: true,
             AttachStderr: true,
             Tty: true,
