@@ -5,7 +5,7 @@ import { Table } from "flowbite-react";
 import Link from "next/link";
 import "./globals.css";
 
-export default function Proflie() {
+export default async function Proflie() {
   return (
     <main>
       <div>
@@ -28,6 +28,7 @@ export default function Proflie() {
                 <div className="flex flex-wrap gap-2">
                   <Button color="success" pill>
                     <Link href="/terminal">Start Lab 1</Link>
+                    
                   </Button>
                 </div>
               </Table.Cell>

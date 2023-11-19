@@ -49,7 +49,7 @@ const returnContainersRouter = (io) => {
     router.post('/create', (req, res, next) => {
         let options = {
             Image: req.body.containerImage,
-            AttachStdin: true,
+            AttachStdin: false,
             AttachStdout: true,
             AttachStderr: true,
             Tty: true,
@@ -229,28 +229,6 @@ const returnContainersRouter = (io) => {
 
         let array = [];
         let streams = [];
-        // for react web ui
-        // socket.on('getContainersInfo', (id) => {
-        //     if (array.indexOf(id) === -1) {
-        //         array.push(id);
-        //         console.log('socket.io => getContainersInfo ' + id);
-        //         const container = docker.getContainer(id);
-        //         container.stats((err, stream) => {
-        //             streams.push(stream);
-        //             if (!err && stream != null) {
-        //                 stream.on('data', (data) => {
-        //                     const toSend = JSON.parse(data.toString('utf8'));
-        //                     socket.emit('containerInfo', toSend);
-        //                 });
-        //                 stream.on('end', () => {
-        //                     socket.emit('end', 'ended');
-        //                     stream.destroy();
-        //                 });
-        //             }
-        //         });
-        //     }
-        // });
-
     });
 
     return router;
