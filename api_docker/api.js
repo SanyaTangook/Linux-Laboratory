@@ -5,10 +5,10 @@ const stream = require("stream");
 
 const docker = new Docker();
 
-app.post("/containers", (req, res) => {
+app.post("/containers/:Name", (req, res) => {
   docker
     .createContainer({
-      Image: "ubuntu",
+      Image: req.params.Name,
       AttachStdin: false,
       AttachStdout: true,
       AttachStderr: true,
@@ -18,7 +18,7 @@ app.post("/containers", (req, res) => {
       return container.start();
     })
     .then((container) => {
-      res.json("start containers complete");
+      res.json(`start containers complete`);
     });
 });
 
@@ -35,7 +35,14 @@ app.get("/stop/:id", (req, res, next) => {
   const container = docker.getContainer(req.params.id);
   container.stop(null, (err, data) => {
     res.json({ message: "stop containers complete" });
-    console.log(req);
+  });
+});
+
+
+app.get('/remove/:id', (req, res, next) => {
+  const container = docker.getContainer(req.params.id);
+  container.remove({force: true}, (err, data) => {
+    res.json("remove containers complete ")
   });
 });
 
