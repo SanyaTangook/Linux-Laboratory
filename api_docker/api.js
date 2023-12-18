@@ -1,7 +1,7 @@
-const express = require("express");
+import express from "express";
 const app = express();
-const Docker = require("dockerode");
-const stream = require("stream");
+import Docker from "dockerode";
+import stream from "stream";
 
 const docker = new Docker();
 
@@ -14,22 +14,21 @@ app.post("/containers/:Name", (req, res) => {
       AttachStderr: true,
       Tty: true,
     })
-    .then(function (container) {
-      return container.start();
-    })
-    .then((container) => {
+    .then((container) => container.start())
+    .then(() => {
       res.json(`start containers complete`);
     });
 });
 
 app.get("/containerslist", (req, res) => {
-    docker.listContainers(function (err, containers) {
-      const containerObjects = containers.map(element => ({ id: element.Id  , Name: element.Names}));
-      res.json(containerObjects);
-    });
+  docker.listContainers((err, containers) => {
+    const containerObjects = containers.map((element) => ({
+      id: element.Id,
+      Name: element.Names,
+    }));
+    res.json(containerObjects);
   });
-  
-  
+});
 
 app.get("/stop/:id", (req, res, next) => {
   const container = docker.getContainer(req.params.id);
@@ -38,10 +37,9 @@ app.get("/stop/:id", (req, res, next) => {
   });
 });
 
-
 app.get('/remove/:id', (req, res, next) => {
   const container = docker.getContainer(req.params.id);
-  container.remove({force: true}, (err, data) => {
+  container.remove({ force: true }, (err, data) => {
     res.json("remove containers complete ")
   });
 });
