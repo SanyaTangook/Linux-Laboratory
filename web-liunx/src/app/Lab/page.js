@@ -1,5 +1,11 @@
-export default function lab(){
+'use server'
+
+import { Terminal } from 'xterm';
+
+export async function Terminal(){
+    const terminal = new Terminal();
+}
+export default async function Lab(){
     return(
-        <h1> Hello Lab</h1>
-    );  
+    )
 }
