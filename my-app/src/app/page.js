@@ -3,7 +3,7 @@ import Link from "next/link"
 export default function Home() {
   return (
     <main>
-      <button className="btn btn-active btn-secondary btn-lg"> <Link href={'./Login'}  > Login </Link></button>
+       <Link href={'./Login'} className="btn btn-active btn-secondary btn-lg" > Login </Link>
     </main>
   )
 }
