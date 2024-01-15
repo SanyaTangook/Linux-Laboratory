@@ -1,14 +1,14 @@
 import { Server } from "socket.io";
-import docker from "dockerode";
-import stream from "stream";
+import Docker from "dockerode";
 
-const io = new Server(9000)
+const docker = new Docker();
+const io = new Server(9001);
 
 io.on('connection', (socket) => {
     socket.on('exec', (id, w, h) => {
         const container = docker.getContainer(id);
         let cmd = {
-            'AttachStdout': false,
+            'AttachStdout': true,
             'AttachStderr': true,
             'AttachStdin': true,
             'Tty': true,

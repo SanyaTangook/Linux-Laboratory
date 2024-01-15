@@ -1,8 +1,9 @@
-const express = require('express');
-const Docker = require('dockerode');
-const docker = new Docker();
+import express from "express";
 const app = express();
-const port = 9000
+import Docker from "dockerode";
+
+const docker = new Docker();
+
 
 app.post("/containers/:Name", (req, res) => {
   docker
@@ -15,7 +16,7 @@ app.post("/containers/:Name", (req, res) => {
     })
     .then((container) => container.start())
     .then(() => {
-      res.json(`start containers complete`);
+        res.json(`start containers complete`);
     });
 });
 
@@ -45,6 +46,7 @@ app.get('/remove/:id', (req, res, next) => {
 
 
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+app.listen(9000, () => {
+  console.log("Starting node.js at port " + 9000);
+});
+
