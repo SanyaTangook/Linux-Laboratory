@@ -7,7 +7,7 @@ export default function Lab() {
         <h1> Lab 1 </h1> <br />
         <h3> เนื้อหา </h3>
       </div>
-      <Link href="Lab/console" className="btn btn-success"> เริ่มทดลอง </Link>
+      <Link href="Lab/console" className="btn btn-success" target="_blank"> เริ่มทดลอง </Link>
     </>
   );
 }
