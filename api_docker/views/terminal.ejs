@@ -72,10 +72,10 @@
                 lineHeight: 16,
             },
         });
-        var id ='9e66cacaaabe3e0fc72330b9c8559faf0334ebfedd89c288d486ec772552605c'
+        var id = window.location.pathname.split('/')
         var socket = io('http://localhost:3001');
 
-        socket.emit('exec', id, $('#terminal').width(), $('#terminal').height());
+        socket.emit('exec', id[2], $('#terminal').width(), $('#terminal').height());
 
         terminal.open(document.getElementById("terminal"));
         var attachAddon = new AttachAddon.AttachAddon(socket);

@@ -125,7 +125,7 @@ io.on('connection', (socket) => {
 });
 
 
-app.get('/console', (req, res, next) => {
+app.get('/console/:id', (req, res, next) => {
   res.render('terminal')
 });
 
