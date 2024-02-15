@@ -73,7 +73,9 @@
             },
         });
         var id = window.location.pathname.split('/')
-        var socket = io('http://localhost:3001');
+        // var socket = io('http://localhost:3001');
+        var socket = io();
+
 
         socket.emit('exec', id[2], $('#terminal').width(), $('#terminal').height());
 
