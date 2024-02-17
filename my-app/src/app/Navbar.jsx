@@ -4,7 +4,7 @@ export function Navbar() {
   return (
     <div className="navbar bg-slate-100 text-neutral-content scroll-px-0.5 scroll-my-1.5 ">
       <div className="flex-1">
-        <Link href={"./"}>
+        <Link href={"/Home"}>
           <Image
             src="/kmutnb_Logo.png"
             width={50}

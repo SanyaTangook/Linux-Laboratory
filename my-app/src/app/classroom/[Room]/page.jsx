@@ -1,11 +1,18 @@
+'use client';
 
 import Link from "next/link";
 import data from "../../classroom.json";
-import { useRouter } from 'next/navigation'
+import { useState } from "react";
 
-export default async function page({ params }) {
+export default  function page({ params }) {
+  const [idLab , setIdLab] = useState(0)
+
+  const NextLab = () =>{
+    idLab == 9 ? setIdLab(0) : setIdLab(idLab+1)
+  }
   return (
     <>
+    <button className="btn btn-primary" onClick={()=>NextLab()}>Lab ต่อไป</button> &nbsp;
       <div className="text-sm breadcrumbs">
         <ul>
           <li><Link href='/Home'>Home</Link></li>
@@ -32,8 +39,14 @@ export default async function page({ params }) {
                 <div className="grid gap-4  justify-center ">
                   <span className="border-4 border-green-700	rounded-full p-2 w-40 "style={{ textAlign: "center" }}>
                     {" "}{data.classroom[keys].Timer}{" "}
-                  </span>
-                  <Link href={`/Lab/${data.classroom[keys].id}`} className="btn btn-error rounded-full w-40" >เข้าสู่บทเรียน</Link>
+                  </span> 
+                  {
+                    data.classroom[keys].id == idLab 
+                    ?  
+                      <Link href={`/Lab/${data.classroom[keys].id}`} className="btn btn-success rounded-full w-40">เข้าสู่บทเรียน</Link>
+                    :
+                      <Link href='#' className="btn btn-error rounded-full w-40">เข้าสู่บทเรียน</Link>
+                  }
                 </div>
               </th>
             </tr>
