@@ -148,7 +148,6 @@ app.post("/containers/:NameImage/:Name", (req, res) => {
       name: `${req.params.Name}_Lab`
     })
     .then((container) =>{ 
-      console.log(container)
       container.start()
       res.json({'id':container.id , 'name':`${req.params.Name}_Lab`})
     })
@@ -186,7 +185,6 @@ app.get("/Room" , (req , res , next)=>{
 
 app.post("/Room/:id" , (req , res , next)=>{
   data.Room.push({id:data.Room.length , teacher: req.params.id})
-  console.log(data)
   res.status(200)
   res.json(data)
 })
