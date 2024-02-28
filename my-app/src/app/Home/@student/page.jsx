@@ -1,3 +1,6 @@
+'use client'
+
+
 import Link from "next/link";
 
 async function getData(){
@@ -7,7 +10,6 @@ async function getData(){
 
 export default async function page() {
   const date = await getData()
-  console.log(date)
   const styleFont = {
     fontSize: 50,
     fontWeight: "bold",
