@@ -1,0 +1,40 @@
+{
+    "Lab":[
+        {
+            "id": 1,
+            "title": "command_line",
+            "step": [
+                {
+                    "step": 1,
+                    "command": "ls",
+                    "Description": "ls is read all flie",
+                    "score": 50
+                },
+                {
+                    "step": 2,
+                    "command": "ls -al",
+                    "Description": "ls is read all flie and show ",
+                    "score": 50
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "command_line",
+            "step": [
+                {
+                    "step": 1,
+                    "command": "ls",
+                    "Description": "ls is read all flie",
+                    "score": 50
+                },
+                {
+                    "step": 2,
+                    "command": "ls -al",
+                    "Description": "ls is read all flie and show ",
+                    "score": 50
+                }
+            ]   
+        }
+    ]
+}

@@ -4,7 +4,6 @@ import { Server } from "socket.io";
 import cors from "cors";
 import Docker from "dockerode";
 import stream from "stream";
-import { ok } from "assert";
 
 const app = express();
 app.use(cors());
@@ -131,7 +130,6 @@ const data = {
     {"id": 2 , "teacher": "DCK"}
   ]
 }
-const dataJson = JSON.stringify(data)
 
 app.get('/console/:id', (req, res, next) => {
   res.render('terminal')
